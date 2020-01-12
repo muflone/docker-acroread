@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+   acroread:
+     container_name: acroread
+     image: chrisdaish/acroread:latest
+     network_mode: none
+     hostname: acroread
+     domainname: docker.muflone.lan
+     restart: 'no'
+     environment:
+       DISPLAY: :0
+     volumes:
+       - /tmp/.X11-unix:/tmp/.X11-unix
+       - ./data:/home/acroread
